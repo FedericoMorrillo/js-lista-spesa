@@ -21,6 +21,8 @@ let i = 0;
      //assegniamo la classe
      prodotto.classList.add('prodotto');
 
+     prodotto.setAttribute("key", i);
+
      //inseriamo il prodotto dell' indice
      prodotto.textContent = spesa[i];
 
@@ -32,9 +34,11 @@ let i = 0;
 
     // aggiungiamo un evento on click
     prodotto.addEventListener('click', function(event) {
-    prodotto.classList.toggle('comprato');    
-    console.log("ho cliccato");
+    prodotto.classList.toggle('comprato');
     console.log(event);
+    event.target.getAttribute("key");
+    const chiave = event.target.getAttribute("key");
+    console.log(`Ho cliccato ${this.innerHTML} posizionato nella lista come numero ${chiave}`);    
     }) 
  }
 //*****************************************
